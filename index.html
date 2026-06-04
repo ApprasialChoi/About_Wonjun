@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>최원준 평가사 | 중앙감정평가법인</title>
+<meta name="description" content="진심의 가치를 믿습니다 — 중앙감정평가법인 본사 소속 최원준 감정평가사 소개" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --navy:#1b2a4e;
+    --navy-deep:#141f3a;
+    --navy-soft:#27396a;
+    --gold:#e8b008;
+    --ink:#2a2f3a;
+    --muted:#6b7280;
+    --line:#e5e8ef;
+    --bg:#f3f5f9;
+    --card:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  .snap{
+    height:100vh;
+    overflow-y:auto;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+  }
+  .screen{
+    min-height:100vh;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    display:flex;
+  }
+
+  /* ===== SCREEN 1 — 표지 / 신원 ===== */
+  #cover{background:var(--bg)}
+  .cover-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+  }
+  .cover-info{
+    padding:clamp(28px,4vw,64px);
+    display:flex;flex-direction:column;justify-content:center;gap:26px;
+  }
+  .brand-row{display:flex;align-items:center;gap:14px}
+  .brand-row img{height:34px;width:auto}
+  .contact-list{display:grid;gap:13px}
+  .contact-item{display:grid;grid-template-columns:78px 1fr;align-items:baseline;gap:12px;font-size:15px}
+  .contact-item .k{
+    color:#fff;background:var(--navy);font-size:12.5px;font-weight:600;
+    padding:3px 0;border-radius:6px;text-align:center;letter-spacing:.04em;
+  }
+  .contact-item .v{color:var(--ink);word-break:break-all}
+  .contact-item .v a{color:var(--navy-soft);text-decoration:none}
+  .contact-item .v a:hover{text-decoration:underline}
+  .credentials{display:grid;gap:13px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
+  .cred{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:15px}
+  .cred .k{color:var(--navy);font-weight:700}
+  .kakao{display:flex;align-items:center;gap:16px}
+  .kakao img{width:96px;height:96px;border:1px solid var(--line);border-radius:10px;padding:6px;background:#fff}
+  .kakao .label{font-size:13px;color:var(--muted)}
+  .kakao .label b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+  .closing{font-size:14px;color:var(--muted);line-height:1.85}
+
+  .cover-hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:#fff;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:flex-start;
+    padding:clamp(34px,4.5vw,70px);
+  }
+  .cover-hero h1{
+    font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.32;letter-spacing:-.01em;
+    position:relative;z-index:2;
+  }
+  .cover-hero .who{margin-top:22px;position:relative;z-index:2}
+  .cover-hero .who .org{font-size:15px;color:#aab6d8;letter-spacing:.03em}
+  .cover-hero .who .name{font-size:26px;font-weight:700;margin-top:4px}
+  .cover-hero .who .name span{font-size:17px;font-weight:500;color:#cdd6ee;margin-left:6px}
+  .hero-photo{
+    position:absolute;right:-4%;bottom:0;height:74%;z-index:1;
+    filter:drop-shadow(-12px 0 30px rgba(0,0,0,.35));
+  }
+  .hero-photo img{height:100%;width:auto;display:block}
+  .tagline-badge{
+    position:absolute;top:clamp(34px,4.5vw,70px);right:clamp(34px,4.5vw,70px);
+    z-index:2;font-size:12px;letter-spacing:.2em;color:#8fa0cf;font-weight:600;
+  }
+
+  /* ===== SCREEN 2 — 전문성 ===== */
+  #pro{background:var(--navy-deep);color:#fff}
+  .pro-wrap{
+    width:100%;max-width:1180px;margin:0 auto;
+    padding:clamp(26px,3vw,44px) clamp(20px,4vw,48px);
+    display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);justify-content:center;
+  }
+  .pro-head{text-align:center}
+  .pro-head .eyebrow{font-size:12px;letter-spacing:.25em;color:var(--gold);font-weight:700}
+  .pro-head h2{font-size:clamp(24px,3vw,38px);font-weight:800;line-height:1.3;margin-top:10px}
+  .pro-cols{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,2.4vw,32px)}
+  @media (max-width:880px){.pro-cols{grid-template-columns:1fr}}
+
+  .strengths{display:grid;gap:14px}
+  .strength{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;padding:13px 16px;display:grid;grid-template-columns:38px 1fr;gap:13px;
+  }
+  .strength .num{
+    width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy-deep);
+    font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;
+  }
+  .strength h3{font-size:16px;font-weight:700;margin-bottom:6px}
+  .strength p{font-size:13px;color:#c2cae0;line-height:1.65}
+
+  .panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:18px 20px}
+  .panel-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:6px}
+  .panel-title h3{font-size:16px;font-weight:700}
+  .panel-title .sum{font-size:13px;color:var(--gold);font-weight:700}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:5.5px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+  th{color:#9fabcf;font-weight:600;font-size:12px}
+  td.amt{text-align:right;font-weight:700;color:#fff;white-space:nowrap}
+  td.purpose{color:var(--gold);white-space:nowrap}
+  td.item{color:#dfe4f1}
+
+  .firm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+  .stat{text-align:center;background:rgba(255,255,255,.04);border-radius:12px;padding:12px 6px}
+  .stat .ico{font-size:20px}
+  .stat .big{font-size:26px;font-weight:800;color:#fff;line-height:1.1;margin:4px 0}
+  .stat .lab{font-size:11.5px;color:#9fabcf}
+  .firm-desc{font-size:12.5px;color:#c2cae0;line-height:1.7}
+
+  .bldgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+  .bldg{border-radius:12px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}
+  .bldg img{width:100%;height:120px;object-fit:cover;display:block}
+  .bldg .cap{padding:9px 10px}
+  .bldg .cap .n{font-size:13px;font-weight:600}
+  .bldg .cap .a{font-size:13px;font-weight:800;color:var(--gold);margin-top:2px}
+
+  /* scroll cue */
+  .cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;
+    color:#fff;font-size:11px;letter-spacing:.2em;opacity:.7;text-align:center;animation:bob 1.8s infinite}
+  .cue .arrow{display:block;font-size:18px;margin-top:2px}
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+  @media (max-width:760px){
+    .snap{scroll-snap-type:none}
+    .screen{height:auto}
+    .cover-grid{grid-template-columns:1fr}
+    .cover-hero{min-height:88vh}
+    .hero-photo{height:58%;right:-8%}
+    .firm-stats,.bldgs{grid-template-columns:1fr}
+    .bldg img{height:170px}
+    .cue{display:none}
+  }
+</style>
+</head>
+<body>
+<main class="snap">
+
+  <!-- ===================== 화면 1 : 표지 / 신원 ===================== -->
+  <section class="screen" id="cover">
+    <div class="cover-grid">
+      <!-- 좌측 정보 패널 -->
+      <div class="cover-info">
+        <div class="brand-row">
+          <img src="assets/logo.png" alt="중앙감정평가법인 로고" />
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item"><span class="k">주소</span><span class="v">서울특별시 서초구 서초동 1599-11</span></div>
+          <div class="contact-item"><span class="k">핸드폰</span><span class="v"><a href="tel:010-9984-5915">010-9984-5915</a></span></div>
+          <div class="contact-item"><span class="k">사무실</span><span class="v"><a href="tel:02-3490-2419">02-3490-2419</a></span></div>
+          <div class="contact-item"><span class="k">블로그</span><span class="v"><a href="https://blog.naver.com/gkfbaks" target="_blank" rel="noopener">blog.naver.com/gkfbaks</a></span></div>
+          <div class="contact-item"><span class="k">이메일</span><span class="v"><a href="mailto:jabon5915@jaa.co.kr">jabon5915@jaa.co.kr</a></span></div>
+        </div>
+
+        <div class="credentials">
+          <div class="cred"><span class="k">학력</span><span>연세대학교 도시공학과 (분당 서현고 졸)</span></div>
+          <div class="cred"><span class="k">자격증</span><span>감정평가사</span></div>
+        </div>
+
+        <div class="kakao">
+          <img src="assets/qr.png" alt="카카오톡 프로필 QR 코드" />
+          <div class="label"><b>카카오톡 프로필</b>QR을 스캔해 바로 상담을 시작하세요.</div>
+        </div>
+
+        <p class="closing">
+          긴 소개글 읽어주셔서 감사합니다.<br />
+          모든 게 빠르게 변하고 지나쳐가는 오늘날에도<br />
+          여전히 진심의 가치를 믿습니다.<br />
+          제가 진심으로 도울 기회를 주시면 감사하겠습니다.
+        </p>
+      </div>
+
+      <!-- 우측 표지(네이비) -->
+      <div class="cover-hero">
+        <span class="tagline-badge">CENTRAL APPRAISAL</span>
+        <h1>진심의 가치를<br />믿습니다</h1>
+        <div class="who">
+          <div class="org">중앙감정평가법인 본사</div>
+          <div class="name">최원준 <span>평가사</span></div>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/photo.png" alt="최원준 평가사" />
+        </div>
+        <div class="cue">SCROLL<span class="arrow">↓</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 화면 2 : 전문성 / 실적 ===================== -->
+  <section class="screen" id="pro">
+    <div class="pro-wrap">
+      <div class="pro-head">
+        <div class="eyebrow">PROFESSIONAL APPRAISER</div>
+        <h2>전문성을 바탕으로<br />진심을 다해 임합니다</h2>
+      </div>
+
+      <div class="pro-cols">
+        <!-- 좌: 강점 + 업무실적 -->
+        <div style="display:grid;gap:14px">
+          <div class="strengths">
+            <div class="strength">
+              <div class="num">1</div>
+              <div>
+                <h3>대형본사 소속 평가사</h3>
+                <p>해외 토지사용권(인도), 오픈상가, 집합동산 등 특수물건 평가경험 다수. NPL · PF브릿지론 · 소송감정 · 보상평가 · 자산재평가 등 다양한 목적의 감정평가 진행.</p>
+              </div>
+            </div>
+            <div class="strength">
+              <div class="num">2</div>
+              <div>
+                <h3>전문성을 바탕으로 진심으로 다가가는 평가사</h3>
+                <p>감정서 작성건수 200건 이상, 누적 평가금액 5조 이상의 실무경험. 단순히 높은 가격이 아닌, 일이 진행되는 선에서 설명 가능하고 문제없는 가격 산출에 강점.</p>
+              </div>
+            </div>
+            <div class="strength">
+              <div class="num">3</div>
+              <div>
+                <h3>신속하고 책임감 있는 평가사</h3>
+                <p>접수부터 발송까지 평균 2.5일 소요 — 급건도 문제 없습니다! 탁상감정 · 감정서 작성 · 심사응대 및 발송까지 직접 진행합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">
+              <h3>주요업무실적</h3>
+              <span class="sum">누적 평가금액 5조 2천억</span>
+            </div>
+            <table>
+              <thead><tr><th>평가목적</th><th>평가물건</th><th style="text-align:right">평가금액</th></tr></thead>
+              <tbody>
+                <tr><td class="purpose">컨설팅</td><td class="item">OO마스터리스 1호 (백화점 및 마트)</td><td class="amt">6,500억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">OOOO 평택 (물류창고)</td><td class="amt">5,810억</td></tr>
+                <tr><td class="purpose">임대료</td><td class="item">돈의문 OOO (오피스)</td><td class="amt">4,150억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">OOOOO리츠 (물류창고)</td><td class="amt">3,600억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">여의도OOOOOO (오피스)</td><td class="amt">3,300억</td></tr>
+                <tr><td class="purpose">컨설팅</td><td class="item">수원당수지구 (상업용지)</td><td class="amt">2,920억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">가산동 소재 코리빙</td><td class="amt">2,240억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">신라OOO OO (호텔)</td><td class="amt">1,600억</td></tr>
+                <tr><td class="purpose">담보</td><td class="item">제주 OOO키즈파크 (사업지)</td><td class="amt">1,000억</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 우: 법인 소개 + 대표 평가실적 -->
+        <div style="display:grid;gap:18px;align-content:start">
+          <div class="panel">
+            <div class="panel-title"><h3>중앙감정평가법인 소개</h3></div>
+            <div class="firm-stats">
+              <div class="stat"><div class="ico">🏢</div><div class="big">17</div><div class="lab">전국 본지사 수</div></div>
+              <div class="stat"><div class="ico">👥</div><div class="big">205</div><div class="lab">구성원 수</div></div>
+              <div class="stat"><div class="ico">🎖️</div><div class="big">AA-</div><div class="lab">신용등급</div></div>
+            </div>
+            <p class="firm-desc">
+              국토교통부가 지정한 <b style="color:#fff">‘주요 대형평가법인’</b>으로서 2025년 기준 매출액 10위권 내의 법인입니다.
+              공정성과 전문성을 바탕으로 <b style="color:#fff">2년 연속 ‘국세청 부동산 감정평가사업’</b>에 선정되었습니다.
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title"><h3>주요 평가실적</h3></div>
+            <div class="bldgs">
+              <div class="bldg">
+                <img src="assets/bldg-sk.png" alt="종로 SK린빌딩" />
+                <div class="cap"><div class="n">종로 SK *린빌딩</div><div class="a">10,000억원</div></div>
+              </div>
+              <div class="bldg">
+                <img src="assets/bldg-acro.png" alt="반포 아크로리버파크" />
+                <div class="cap"><div class="n">반포 아크로리버*크</div><div class="a">20,000억원</div></div>
+              </div>
+              <div class="bldg">
+                <img src="assets/bldg-doosan.png" alt="분당 두산타워" />
+                <div class="cap"><div class="n">분당 두* 타워</div><div class="a">10,300억원</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
