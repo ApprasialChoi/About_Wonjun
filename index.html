@@ -85,7 +85,7 @@
   .cover-hero .who{margin-top:22px;position:relative;z-index:2}
   .cover-hero .who .org{font-size:15px;color:#aab6d8;letter-spacing:.03em}
   .cover-hero .who .name{font-size:26px;font-weight:700;margin-top:4px}
-  .cover-hero .who .name span{font-size:26px;font-weight:700;color:#cdd6ee;margin-left:8px}
+  .cover-hero .who .name span{font-size:26px;font-weight:700;color:#fff;margin-left:8px}
   .hero-photo{
     position:absolute;right:-4%;bottom:0;height:min(74%,78vh);z-index:1;
     filter:drop-shadow(-12px 0 30px rgba(0,0,0,.35));
@@ -110,7 +110,17 @@
   .hero-about .about-qr img{width:104px;height:104px;border-radius:10px;background:#fff;padding:6px}
   .hero-about .about-qr .qlab{font-size:15px;color:#aab6d8;letter-spacing:.03em}
 
-  /* ===== SCREEN 2 — 전문성 ===== */
+  /* ===== SCREEN 2 — 주요업무실적 / 소개 ===== */
+  #record{background:var(--navy-deep);color:#fff}
+  .record-wrap{
+    width:100%;max-width:1180px;margin:0 auto;
+    padding:clamp(34px,4.5vw,70px);
+    display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);
+    align-items:start;align-content:center;
+  }
+  #record .hero-record,#record .hero-about{max-width:100%;margin-top:0}
+
+  /* ===== SCREEN 3 — 전문성 ===== */
   #pro{background:var(--navy-deep);color:#fff}
   .pro-wrap{
     width:100%;max-width:1180px;margin:0 auto;
@@ -172,6 +182,7 @@
     .cover-grid{grid-template-columns:1fr}
     .cover-hero{min-height:88vh}
     .hero-record,.hero-about{max-width:100%}
+    .record-wrap{grid-template-columns:1fr;gap:28px}
     .hero-photo{height:40%;right:-10%;opacity:.9}
     .firm-stats,.bldgs{grid-template-columns:1fr}
     .bldg img{height:170px}
@@ -193,32 +204,6 @@
           <div class="org">중앙감정평가법인 본사</div>
           <div class="name">최원준 <span>평가사</span></div>
         </div>
-        <div class="hero-record">
-          <div class="rec-label">주요업무실적 <span class="rec-sum">· 누적 5조 2천억</span></div>
-          <div class="rec-line">컨설팅 OO마스터리스 1호 (백화점 및 마트) 6,500억</div>
-          <div class="rec-line">담보 OOOO 평택 (물류창고) 5,810억</div>
-          <div class="rec-line">임대료 돈의문 OOO (오피스) 4,150억</div>
-          <div class="rec-line">담보 OOOOO리츠 (물류창고) 3,600억</div>
-          <div class="rec-line">담보 여의도OOOOOO (오피스) 3,300억</div>
-          <div class="rec-line">컨설팅 수원당수지구 (상업용지) 2,920억</div>
-          <div class="rec-line">담보 가산동 소재 코리빙 2,240억</div>
-          <div class="rec-line">담보 신라OOO OO (호텔) 1,600억</div>
-          <div class="rec-line">담보 제주 OOO키즈파크 (사업지) 1,000억</div>
-        </div>
-        <div class="hero-about">
-          <div class="about-title">All About 최원준 평가사</div>
-          <div class="about-item"><span class="ak">주소</span><span class="av">서울특별시 서초구 서초동 1599-11</span></div>
-          <div class="about-item"><span class="ak">핸드폰</span><span class="av"><a href="tel:010-9984-5915">010-9984-5915</a></span></div>
-          <div class="about-item"><span class="ak">사무실</span><span class="av"><a href="tel:02-3490-2419">02-3490-2419</a></span></div>
-          <div class="about-item"><span class="ak">블로그</span><span class="av"><a href="https://blog.naver.com/gkfbaks" target="_blank" rel="noopener">blog.naver.com/gkfbaks</a></span></div>
-          <div class="about-item"><span class="ak">이메일</span><span class="av"><a href="mailto:jabon5915@jaa.co.kr">jabon5915@jaa.co.kr</a></span></div>
-          <div class="about-item"><span class="ak">학력</span><span class="av">연세대학교 도시공학과 (분당 서현고 졸)</span></div>
-          <div class="about-item"><span class="ak">자격증</span><span class="av">감정평가사, 데이터분석준전문가</span></div>
-          <div class="about-qr">
-            <img src="assets/qr.png" alt="카카오톡 프로필 QR 코드" />
-            <div class="qlab">카카오톡 프로필 QR</div>
-          </div>
-        </div>
         <div class="hero-photo">
           <img src="assets/photo.png" alt="최원준 평가사" />
         </div>
@@ -227,7 +212,39 @@
     </div>
   </section>
 
-  <!-- ===================== 화면 2 : 전문성 / 실적 ===================== -->
+  <!-- ===================== 화면 2 : 주요업무실적 / 소개 ===================== -->
+  <section class="screen" id="record">
+    <div class="record-wrap">
+      <div class="hero-record">
+        <div class="rec-label">주요업무실적 <span class="rec-sum">· 누적 5조 2천억</span></div>
+        <div class="rec-line">컨설팅 OO마스터리스 1호 (백화점 및 마트) 6,500억</div>
+        <div class="rec-line">담보 OOOO 평택 (물류창고) 5,810억</div>
+        <div class="rec-line">임대료 돈의문 OOO (오피스) 4,150억</div>
+        <div class="rec-line">담보 OOOOO리츠 (물류창고) 3,600억</div>
+        <div class="rec-line">담보 여의도OOOOOO (오피스) 3,300억</div>
+        <div class="rec-line">컨설팅 수원당수지구 (상업용지) 2,920억</div>
+        <div class="rec-line">담보 가산동 소재 코리빙 2,240억</div>
+        <div class="rec-line">담보 신라OOO OO (호텔) 1,600억</div>
+        <div class="rec-line">담보 제주 OOO키즈파크 (사업지) 1,000억</div>
+      </div>
+      <div class="hero-about">
+        <div class="about-title">All About 최원준 평가사</div>
+        <div class="about-item"><span class="ak">주소</span><span class="av">서울특별시 서초구 서초동 1599-11</span></div>
+        <div class="about-item"><span class="ak">핸드폰</span><span class="av"><a href="tel:010-9984-5915">010-9984-5915</a></span></div>
+        <div class="about-item"><span class="ak">사무실</span><span class="av"><a href="tel:02-3490-2419">02-3490-2419</a></span></div>
+        <div class="about-item"><span class="ak">블로그</span><span class="av"><a href="https://blog.naver.com/gkfbaks" target="_blank" rel="noopener">blog.naver.com/gkfbaks</a></span></div>
+        <div class="about-item"><span class="ak">이메일</span><span class="av"><a href="mailto:jabon5915@jaa.co.kr">jabon5915@jaa.co.kr</a></span></div>
+        <div class="about-item"><span class="ak">학력</span><span class="av">연세대학교 도시공학과<br />(분당 서현고 졸)</span></div>
+        <div class="about-item"><span class="ak">자격증</span><span class="av">감정평가사, 데이터분석준전문가</span></div>
+        <div class="about-qr">
+          <img src="assets/qr.png" alt="카카오톡 프로필 QR 코드" />
+          <div class="qlab">카카오톡 프로필 QR</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 화면 3 : 전문성 / 실적 ===================== -->
   <section class="screen" id="pro">
     <div class="pro-wrap">
       <div class="pro-head">
@@ -249,7 +266,7 @@
             <div class="strength">
               <div class="num">2</div>
               <div>
-                <h3>전문성을 바탕으로 진심으로 다가가는 평가사</h3>
+                <h3>전문성을 바탕으로 <span style="white-space:nowrap">진심으로 다가가는 평가사</span></h3>
                 <p>감정서 작성건수 200건 이상, 누적 평가금액 5조 이상의 실무경험. 단순히 높은 가격이 아닌, 일이 진행되는 선에서 설명 가능하고 문제없는 가격 산출에 강점.</p>
               </div>
             </div>
