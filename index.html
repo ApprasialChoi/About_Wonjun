@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
   :root{
-    --bg:#F1E8D7;        /* 베이지(아이보리) 기본 배경 */
-    --bg2:#EADFC8;       /* 두 번째 페이지: 살짝 깊은 샌드 */
-    --cream:#FBF6EC;     /* 카드 배경 */
+    --bg:#FFFFFF;        /* 전체 페이지 흰색 배경 */
+    --bg2:#FFFFFF;       /* 두 번째 페이지도 흰색 */
+    --cream:#EAF1FB;     /* 카드 배경: 연한 파란색 */
     --ink:#2A2820;       /* 본문 먹색 */
     --navy:#1E3A5F;      /* 제목·포인트 남색 */
     --navy2:#14304E;
@@ -48,26 +48,28 @@
 
   /* ===================== 1면 : 표지 + 주요업무실적 ===================== */
   #cover .top{display:flex;flex-direction:column;gap:6px}
-  #cover .logo{margin-bottom:14px}
+  #cover .eyebrow{color:var(--navy);font-size:21px;font-weight:800;letter-spacing:.01em}
   #cover h1{margin-top:2px}
   #cover .name{font-size:21px;font-weight:700;color:var(--ink);margin-top:14px}
-  #cover .name span{font-size:14px;font-weight:500;color:var(--muted);margin-left:5px}
+  #cover .name span{font-size:21px;font-weight:500;color:var(--muted);margin-left:5px}
 
-  .cover-body{flex:1;display:grid;grid-template-columns:37% 1fr;gap:14px;align-items:end;margin-top:18px}
-  .cover-photo{align-self:end}
-  .cover-photo img{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 18px rgba(40,30,10,.22))}
+  /* 표(좌) ↔ 사진(우) : 사진 높이를 표 높이에 맞춤 */
+  .cover-body{display:grid;grid-template-columns:1fr 40%;gap:16px;align-items:stretch;margin-top:18px}
+  .cover-photo{position:relative;align-self:stretch;min-height:0}
+  .cover-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:drop-shadow(0 8px 18px rgba(40,30,10,.22))}
 
   .record{align-self:start}
   .rec-title{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:10px}
   .rec-title h2{font-size:17px;font-weight:800;color:var(--navy)}
-  .rec-title .sum{font-size:12px;font-weight:700;color:var(--gold)}
+  .rec-title .sum{font-size:17px;font-weight:800;color:var(--navy)}
   .rec-list{list-style:none;display:flex;flex-direction:column}
   .rec-list li{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:7px;
     padding:6px 0;border-bottom:1px solid var(--line);font-size:12px}
   .rec-list li:last-child{border-bottom:none}
   .rec-list .tag{font-size:10px;font-weight:700;color:#fff;background:var(--navy);
-    border-radius:5px;padding:2px 5px;white-space:nowrap;align-self:center}
-  .rec-list .tag.c{background:var(--gold)}
+    border-radius:5px;padding:2px 5px;white-space:nowrap;align-self:center;
+    min-width:48px;text-align:center}
+  .rec-list .tag.c{background:var(--navy)}
   .rec-list .it{color:var(--ink);line-height:1.35}
   .rec-list .amt{font-size:12.5px;font-weight:800;color:var(--navy);white-space:nowrap}
 
@@ -134,16 +136,12 @@
   <section class="screen" id="cover">
     <div class="wrap">
       <div class="top">
-        <img class="logo" src="assets/logo.png" alt="중앙감정평가법인 로고" />
         <span class="eyebrow">중앙감정평가법인 본사</span>
         <h1>진심의 가치를<br />믿습니다</h1>
         <div class="name">최원준 <span>평가사</span></div>
       </div>
 
       <div class="cover-body">
-        <div class="cover-photo">
-          <img src="assets/photo.png" alt="최원준 평가사" />
-        </div>
         <div class="record">
           <div class="rec-title">
             <h2>주요업무실적</h2>
@@ -160,6 +158,9 @@
             <li><span class="tag">담보</span><span class="it">신라OOO OO (호텔)</span><span class="amt">1,600억</span></li>
             <li><span class="tag">담보</span><span class="it">제주 OOO키즈파크 (사업지)</span><span class="amt">1,000억</span></li>
           </ul>
+        </div>
+        <div class="cover-photo">
+          <img src="assets/photo.png" alt="최원준 평가사" />
         </div>
       </div>
     </div>
