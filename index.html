@@ -2,284 +2,261 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>최원준 평가사 | 중앙감정평가법인</title>
 <meta name="description" content="진심의 가치를 믿습니다 — 중앙감정평가법인 본사 소속 최원준 감정평가사 소개" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 <style>
   :root{
-    --navy:#1b2a4e;
-    --navy-deep:#141f3a;
-    --navy-soft:#27396a;
-    --gold:#e8b008;
-    --ink:#2a2f3a;
-    --muted:#6b7280;
-    --line:#e5e8ef;
-    --bg:#f3f5f9;
-    --card:#ffffff;
+    --bg:#F1E8D7;        /* 베이지(아이보리) 기본 배경 */
+    --bg2:#EADFC8;       /* 두 번째 페이지: 살짝 깊은 샌드 */
+    --cream:#FBF6EC;     /* 카드 배경 */
+    --ink:#2A2820;       /* 본문 먹색 */
+    --navy:#1E3A5F;      /* 제목·포인트 남색 */
+    --navy2:#14304E;
+    --gold:#A8741A;      /* 금색 포인트(베이지 위 가독성용으로 깊게) */
+    --muted:#7C6F57;     /* 보조 텍스트 */
+    --line:#DCCFB6;      /* 구분선 */
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
   body{
     font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    color:var(--ink);
-    background:var(--bg);
-    -webkit-font-smoothing:antialiased;
-    line-height:1.6;
+    color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;line-height:1.6;
   }
-  .snap{
-    height:100vh;
-    overflow-y:auto;
-    scroll-snap-type:y mandatory;
-    scroll-behavior:smooth;
-  }
+  .snap{display:block}
   .screen{
-    min-height:100vh;
-    scroll-snap-align:start;
-    scroll-snap-stop:always;
-    display:flex;
+    min-height:100dvh;scroll-snap-align:start;
+    position:relative;display:flex;flex-direction:column;
+    padding:clamp(24px,7vw,40px) clamp(20px,6vw,36px);
   }
+  .wrap{width:100%;max-width:600px;margin:0 auto;flex:1;display:flex;flex-direction:column}
 
-  /* ===== SCREEN 1 — 표지 / 신원 ===== */
-  #cover{background:var(--bg)}
-  .cover-grid{
-    width:100%;
-    display:grid;
-    grid-template-columns:1fr 1.05fr;
-  }
-  .cover-info{
-    padding:clamp(28px,4vw,64px);
-    display:flex;flex-direction:column;justify-content:center;gap:26px;
-  }
-  .brand-row{display:flex;align-items:center;gap:14px}
-  .brand-row img{height:34px;width:auto}
-  .contact-list{display:grid;gap:13px}
-  .contact-item{display:grid;grid-template-columns:78px 1fr;align-items:baseline;gap:12px;font-size:15px}
-  .contact-item .k{
-    color:#fff;background:var(--navy);font-size:12.5px;font-weight:600;
-    padding:3px 0;border-radius:6px;text-align:center;letter-spacing:.04em;
-  }
-  .contact-item .v{color:var(--ink);word-break:break-all}
-  .contact-item .v a{color:var(--navy-soft);text-decoration:none}
-  .contact-item .v a:hover{text-decoration:underline}
-  .credentials{display:grid;gap:13px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}
-  .cred{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:15px}
-  .cred .k{color:var(--navy);font-weight:700}
-  .kakao{display:flex;align-items:center;gap:16px}
-  .kakao img{width:96px;height:96px;border:1px solid var(--line);border-radius:10px;padding:6px;background:#fff}
-  .kakao .label{font-size:13px;color:var(--muted)}
-  .kakao .label b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
-  .closing{font-size:14px;color:var(--muted);line-height:1.85}
-
-  .cover-hero{
-    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
-    color:#fff;position:relative;overflow:hidden;
-    display:flex;flex-direction:column;justify-content:flex-start;
-    padding:clamp(34px,4.5vw,70px);
-  }
-  .cover-hero h1{
-    font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.32;letter-spacing:-.01em;
-    position:relative;z-index:2;
-  }
-  .cover-hero .who{margin-top:22px;position:relative;z-index:2}
-  .cover-hero .who .org{font-size:15px;color:#aab6d8;letter-spacing:.03em}
-  .cover-hero .who .name{font-size:26px;font-weight:700;margin-top:4px}
-  .cover-hero .who .name span{font-size:26px;font-weight:700;color:#fff;margin-left:8px}
-  .hero-photo{
-    position:absolute;right:-4%;bottom:0;height:min(74%,78vh);z-index:1;
-    filter:drop-shadow(-12px 0 30px rgba(0,0,0,.35));
-  }
-  .hero-photo img{height:100%;width:auto;display:block}
-  .tagline-badge{
-    position:absolute;top:clamp(34px,4.5vw,70px);right:clamp(34px,4.5vw,70px);
-    z-index:2;font-size:12px;letter-spacing:.2em;color:#8fa0cf;font-weight:600;
-  }
-  .hero-record{position:relative;z-index:2;margin-top:24px;max-width:60%;display:grid;gap:8px}
-  .hero-record .rec-label{font-size:26px;letter-spacing:.01em;color:var(--gold);font-weight:700;margin-bottom:10px}
-  .hero-record .rec-label .rec-sum{font-weight:700}
-  .hero-record .rec-line{font-size:15px;color:#aab6d8;letter-spacing:.03em;line-height:1.5}
-
-  .hero-about{position:relative;z-index:2;margin-top:24px;max-width:60%;display:grid;gap:7px}
-  .hero-about .about-title{font-size:26px;letter-spacing:.01em;color:var(--gold);font-weight:700;margin-bottom:8px}
-  .hero-about .about-item{font-size:15px;color:#aab6d8;letter-spacing:.03em;line-height:1.5;display:grid;grid-template-columns:62px 1fr;gap:12px}
-  .hero-about .about-item .ak{color:#7e8cb4}
-  .hero-about .about-item .av a{color:#aab6d8;text-decoration:none}
-  .hero-about .about-item .av a:hover{text-decoration:underline}
-  .hero-about .about-qr{margin-top:14px;display:flex;align-items:center;gap:14px}
-  .hero-about .about-qr img{width:104px;height:104px;border-radius:10px;background:#fff;padding:6px}
-  .hero-about .about-qr .qlab{font-size:15px;color:#aab6d8;letter-spacing:.03em}
-
-  /* ===== SCREEN 2 — 주요업무실적 / 소개 ===== */
-  #record{background:var(--navy-deep);color:#fff}
-  .record-wrap{
-    width:100%;max-width:1180px;margin:0 auto;
-    padding:clamp(34px,4.5vw,70px);
-    display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);
-    align-items:start;align-content:center;
-  }
-  #record .hero-record,#record .hero-about{max-width:100%;margin-top:0}
-
-  /* ===== SCREEN 3 — 전문성 ===== */
-  #pro{background:var(--navy-deep);color:#fff}
-  .pro-wrap{
-    width:100%;max-width:1180px;margin:0 auto;
-    padding:clamp(26px,3vw,44px) clamp(20px,4vw,48px);
-    display:flex;flex-direction:column;gap:clamp(16px,2vw,26px);justify-content:center;
-  }
-  .pro-head{text-align:center}
-  .pro-head .eyebrow{font-size:12px;letter-spacing:.25em;color:var(--gold);font-weight:700}
-  .pro-head h2{font-size:clamp(24px,3vw,38px);font-weight:800;line-height:1.3;margin-top:10px}
-  .pro-cols{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,2.4vw,32px)}
-  @media (max-width:880px){.pro-cols{grid-template-columns:1fr}}
-
-  .strengths{display:grid;gap:14px}
-  .strength{
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
-    border-radius:14px;padding:13px 16px;display:grid;grid-template-columns:38px 1fr;gap:13px;
-  }
-  .strength .num{
-    width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy-deep);
-    font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;
-  }
-  .strength h3{font-size:16px;font-weight:700;margin-bottom:6px}
-  .strength p{font-size:13px;color:#c2cae0;line-height:1.65}
-
-  .panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:18px 20px}
-  .panel-title{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:6px}
-  .panel-title h3{font-size:16px;font-weight:700}
-  .panel-title .sum{font-size:13px;color:var(--gold);font-weight:700}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:5.5px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
-  th{color:#9fabcf;font-weight:600;font-size:12px}
-  td.amt{text-align:right;font-weight:700;color:#fff;white-space:nowrap}
-  td.purpose{color:var(--gold);white-space:nowrap}
-  td.item{color:#dfe4f1}
-
-  .firm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
-  .stat{text-align:center;background:rgba(255,255,255,.04);border-radius:12px;padding:12px 6px}
-  .stat .ico{font-size:20px}
-  .stat .big{font-size:26px;font-weight:800;color:#fff;line-height:1.1;margin:4px 0}
-  .stat .lab{font-size:11.5px;color:#9fabcf}
-  .firm-desc{font-size:12.5px;color:#c2cae0;line-height:1.7}
-
-  .bldgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
-  .bldg{border-radius:12px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09)}
-  .bldg img{width:100%;height:120px;object-fit:cover;display:block}
-  .bldg .cap{padding:9px 10px}
-  .bldg .cap .n{font-size:13px;font-weight:600}
-  .bldg .cap .a{font-size:13px;font-weight:800;color:var(--gold);margin-top:2px}
+  /* 공통 타이포 위계 */
+  .eyebrow{font-size:12px;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase}
+  h1{font-size:clamp(32px,9vw,44px);font-weight:800;line-height:1.22;letter-spacing:-.01em;color:var(--navy)}
+  .sec-h{font-size:clamp(23px,6.6vw,32px);font-weight:800;line-height:1.28;color:var(--navy)}
+  .logo{height:30px;width:auto;align-self:flex-start}
 
   /* scroll cue */
-  .cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:5;
-    color:#fff;font-size:11px;letter-spacing:.2em;opacity:.7;text-align:center;animation:bob 1.8s infinite}
-  .cue .arrow{display:block;font-size:18px;margin-top:2px}
-  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+  .cue{position:absolute;left:0;right:0;bottom:14px;text-align:center;
+    font-size:10.5px;letter-spacing:.2em;color:var(--muted);font-weight:600;animation:bob 1.8s infinite}
+  .cue .arrow{display:block;font-size:16px;margin-top:1px}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
-  @media (max-width:760px){
-    .snap{scroll-snap-type:none}
-    .screen{height:auto}
-    .cover-grid{grid-template-columns:1fr}
-    .cover-hero{min-height:88vh}
-    .hero-record,.hero-about{max-width:100%}
-    .record-wrap{grid-template-columns:1fr;gap:28px}
-    .hero-photo{height:40%;right:-10%;opacity:.9}
-    .firm-stats,.bldgs{grid-template-columns:1fr}
-    .bldg img{height:170px}
-    .cue{display:none}
+  /* ===================== 1면 : 표지 + 주요업무실적 ===================== */
+  #cover .top{display:flex;flex-direction:column;gap:6px}
+  #cover .logo{margin-bottom:14px}
+  #cover h1{margin-top:2px}
+  #cover .name{font-size:21px;font-weight:700;color:var(--ink);margin-top:14px}
+  #cover .name span{font-size:14px;font-weight:500;color:var(--muted);margin-left:5px}
+
+  .cover-body{flex:1;display:grid;grid-template-columns:37% 1fr;gap:14px;align-items:end;margin-top:18px}
+  .cover-photo{align-self:end}
+  .cover-photo img{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 18px rgba(40,30,10,.22))}
+
+  .record{align-self:start}
+  .rec-title{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+  .rec-title h2{font-size:17px;font-weight:800;color:var(--navy)}
+  .rec-title .sum{font-size:12px;font-weight:700;color:var(--gold)}
+  .rec-list{list-style:none;display:flex;flex-direction:column}
+  .rec-list li{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:7px;
+    padding:6px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .rec-list li:last-child{border-bottom:none}
+  .rec-list .tag{font-size:10px;font-weight:700;color:#fff;background:var(--navy);
+    border-radius:5px;padding:2px 5px;white-space:nowrap;align-self:center}
+  .rec-list .tag.c{background:var(--gold)}
+  .rec-list .it{color:var(--ink);line-height:1.35}
+  .rec-list .amt{font-size:12.5px;font-weight:800;color:var(--navy);white-space:nowrap}
+
+  /* ===================== 2면 : 전문성 / 강점 / 법인 ===================== */
+  #pro{background:var(--bg2)}
+  #pro .head{margin-bottom:18px}
+  #pro .head .eyebrow{margin-bottom:8px}
+
+  .strengths{display:flex;flex-direction:column;gap:11px}
+  .strength{background:var(--cream);border:1px solid var(--line);border-radius:14px;
+    padding:13px 15px;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+  .strength .num{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;
+    font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+  .strength h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3}
+  .strength p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+  .firm{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px}
+  .firm > h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:12px}
+  .firm-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .stat{text-align:center;background:var(--bg);border-radius:11px;padding:11px 4px}
+  .stat .ico{font-size:18px}
+  .stat .big{font-size:24px;font-weight:800;color:var(--navy);line-height:1.1;margin:3px 0}
+  .stat .lab{font-size:11px;color:var(--muted)}
+  .firm-desc{font-size:12.5px;color:var(--ink);line-height:1.7}
+  .firm-desc b{color:var(--navy)}
+
+  .bldgs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
+  .bldg{background:var(--cream);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+  .bldg img{width:100%;height:96px;object-fit:cover;display:block}
+  .bldg .cap{padding:8px 9px}
+  .bldg .cap .n{font-size:11.5px;font-weight:600;color:var(--ink);line-height:1.3}
+  .bldg .cap .a{font-size:12.5px;font-weight:800;color:var(--gold);margin-top:3px}
+
+  /* ===================== 3면 : All About + QR ===================== */
+  #about .wrap{justify-content:center;gap:18px}
+  #about .sec-h b{color:var(--gold)}
+  .contact-list{display:flex;flex-direction:column;gap:9px}
+  .contact-item{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:11px;font-size:14px}
+  .contact-item .k{color:#fff;background:var(--navy);font-size:11.5px;font-weight:600;
+    padding:4px 0;border-radius:6px;text-align:center;letter-spacing:.03em}
+  .contact-item .v{color:var(--ink);word-break:break-all}
+  .contact-item .v a{color:var(--navy);text-decoration:none}
+  .credentials{display:flex;flex-direction:column;gap:9px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0}
+  .cred{display:grid;grid-template-columns:64px 1fr;gap:11px;font-size:14px}
+  .cred .k{color:var(--gold);font-weight:700}
+  .kakao{display:flex;align-items:center;gap:14px;background:var(--cream);
+    border:1px solid var(--line);border-radius:14px;padding:14px}
+  .kakao img{width:88px;height:88px;border-radius:9px;background:#fff;padding:5px;border:1px solid var(--line)}
+  .kakao .label{font-size:13px;color:var(--muted);line-height:1.55}
+  .kakao .label b{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
+  .closing{font-size:13px;color:var(--muted);line-height:1.9;text-align:center}
+
+  /* 데스크톱: 모바일 레이아웃을 가운데 정렬로 유지 */
+  @media (min-width:680px){
+    .bldg img{height:120px}
   }
 </style>
 </head>
 <body>
 <main class="snap">
 
-  <!-- ===================== 화면 1 : 표지 / 신원 ===================== -->
+  <!-- ===================== 1면 : 표지 + 주요업무실적 ===================== -->
   <section class="screen" id="cover">
-    <div class="cover-grid" style="grid-template-columns:1fr">
-
-      <!-- 표지(네이비) -->
-      <div class="cover-hero">
+    <div class="wrap">
+      <div class="top">
+        <img class="logo" src="assets/logo.png" alt="중앙감정평가법인 로고" />
+        <span class="eyebrow">중앙감정평가법인 본사</span>
         <h1>진심의 가치를<br />믿습니다</h1>
-        <div class="who">
-          <div class="org">중앙감정평가법인 본사</div>
-          <div class="name">최원준 <span>평가사</span></div>
-        </div>
-        <div class="hero-photo">
+        <div class="name">최원준 <span>평가사</span></div>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-photo">
           <img src="assets/photo.png" alt="최원준 평가사" />
         </div>
-        <div class="cue">SCROLL<span class="arrow">↓</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== 화면 2 : 주요업무실적 / 소개 ===================== -->
-  <section class="screen" id="record">
-    <div class="record-wrap">
-      <div class="hero-record">
-        <div class="rec-label">주요업무실적 <span class="rec-sum">· 누적 5조 2천억</span></div>
-        <div class="rec-line">컨설팅 OO마스터리스 1호 (백화점 및 마트) 6,500억</div>
-        <div class="rec-line">담보 OOOO 평택 (물류창고) 5,810억</div>
-        <div class="rec-line">임대료 돈의문 OOO (오피스) 4,150억</div>
-        <div class="rec-line">담보 OOOOO리츠 (물류창고) 3,600억</div>
-        <div class="rec-line">담보 여의도OOOOOO (오피스) 3,300억</div>
-        <div class="rec-line">컨설팅 수원당수지구 (상업용지) 2,920억</div>
-        <div class="rec-line">담보 가산동 소재 코리빙 2,240억</div>
-        <div class="rec-line">담보 신라OOO OO (호텔) 1,600억</div>
-        <div class="rec-line">담보 제주 OOO키즈파크 (사업지) 1,000억</div>
-      </div>
-      <div class="hero-about">
-        <div class="about-title">All About 최원준 평가사</div>
-        <div class="about-item"><span class="ak">주소</span><span class="av">서울특별시 서초구 서초동 1599-11</span></div>
-        <div class="about-item"><span class="ak">핸드폰</span><span class="av"><a href="tel:010-9984-5915">010-9984-5915</a></span></div>
-        <div class="about-item"><span class="ak">사무실</span><span class="av"><a href="tel:02-3490-2419">02-3490-2419</a></span></div>
-        <div class="about-item"><span class="ak">블로그</span><span class="av"><a href="https://blog.naver.com/gkfbaks" target="_blank" rel="noopener">blog.naver.com/gkfbaks</a></span></div>
-        <div class="about-item"><span class="ak">이메일</span><span class="av"><a href="mailto:jabon5915@jaa.co.kr">jabon5915@jaa.co.kr</a></span></div>
-        <div class="about-item"><span class="ak">학력</span><span class="av">연세대학교 도시공학과<br />(분당 서현고 졸)</span></div>
-        <div class="about-item"><span class="ak">자격증</span><span class="av">감정평가사, 데이터분석준전문가</span></div>
-        <div class="about-qr">
-          <img src="assets/qr.png" alt="카카오톡 프로필 QR 코드" />
-          <div class="qlab">카카오톡 프로필 QR</div>
+        <div class="record">
+          <div class="rec-title">
+            <h2>주요업무실적</h2>
+            <span class="sum">누적 5조 2천억</span>
+          </div>
+          <ul class="rec-list">
+            <li><span class="tag c">컨설팅</span><span class="it">OO마스터리스 1호 (백화점·마트)</span><span class="amt">6,500억</span></li>
+            <li><span class="tag">담보</span><span class="it">OOOO 평택 (물류창고)</span><span class="amt">5,810억</span></li>
+            <li><span class="tag">임대료</span><span class="it">돈의문 OOO (오피스)</span><span class="amt">4,150억</span></li>
+            <li><span class="tag">담보</span><span class="it">OOOOO리츠 (물류창고)</span><span class="amt">3,600억</span></li>
+            <li><span class="tag">담보</span><span class="it">여의도OOOOOO (오피스)</span><span class="amt">3,300억</span></li>
+            <li><span class="tag c">컨설팅</span><span class="it">수원당수지구 (상업용지)</span><span class="amt">2,920억</span></li>
+            <li><span class="tag">담보</span><span class="it">가산동 소재 코리빙</span><span class="amt">2,240억</span></li>
+            <li><span class="tag">담보</span><span class="it">신라OOO OO (호텔)</span><span class="amt">1,600억</span></li>
+            <li><span class="tag">담보</span><span class="it">제주 OOO키즈파크 (사업지)</span><span class="amt">1,000억</span></li>
+          </ul>
         </div>
       </div>
     </div>
+    <div class="cue">SCROLL<span class="arrow">↓</span></div>
   </section>
 
-  <!-- ===================== 화면 3 : 전문성 / 실적 ===================== -->
+  <!-- ===================== 2면 : 전문성 / 강점 / 법인 소개 ===================== -->
   <section class="screen" id="pro">
-    <div class="pro-wrap">
-      <div class="pro-head">
-        <div class="eyebrow">PROFESSIONAL APPRAISER</div>
-        <h2>전문성을 바탕으로<br />진심을 다해 임합니다</h2>
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Professional Appraiser</span>
+        <h2 class="sec-h">전문성을 바탕으로<br />진심을 다해 임합니다</h2>
       </div>
 
-      <div class="pro-cols" style="grid-template-columns:1fr;max-width:820px;margin:0 auto;width:100%">
-        <!-- 강점 -->
-        <div style="display:grid;gap:14px">
-          <div class="strengths">
-            <div class="strength">
-              <div class="num">1</div>
-              <div>
-                <h3>대형본사 소속 평가사</h3>
-                <p>해외 토지사용권(인도), 오픈상가, 집합동산 등 특수물건 평가경험 다수. NPL · PF브릿지론 · 소송감정 · 보상평가 · 자산재평가 등 다양한 목적의 감정평가 진행.</p>
-              </div>
-            </div>
-            <div class="strength">
-              <div class="num">2</div>
-              <div>
-                <h3>전문성을 바탕으로 <span style="white-space:nowrap">진심으로 다가가는 평가사</span></h3>
-                <p>감정서 작성건수 200건 이상, 누적 평가금액 5조 이상의 실무경험. 단순히 높은 가격이 아닌, 일이 진행되는 선에서 설명 가능하고 문제없는 가격 산출에 강점.</p>
-              </div>
-            </div>
-            <div class="strength">
-              <div class="num">3</div>
-              <div>
-                <h3>신속하고 책임감 있는 평가사</h3>
-                <p>접수부터 발송까지 평균 2.5일 소요 — 급건도 문제 없습니다! 탁상감정 · 감정서 작성 · 심사응대 및 발송까지 직접 진행합니다.</p>
-              </div>
-            </div>
+      <div class="strengths">
+        <div class="strength">
+          <div class="num">1</div>
+          <div>
+            <h3>대형본사 소속 평가사</h3>
+            <p>해외 토지사용권(인도)·오픈상가·집합동산 등 특수물건 평가경험 다수. NPL · PF브릿지론 · 소송감정 · 보상평가 · 자산재평가 등 다양한 목적의 감정평가 진행.</p>
+          </div>
+        </div>
+        <div class="strength">
+          <div class="num">2</div>
+          <div>
+            <h3>진심으로 다가가는 평가사</h3>
+            <p>감정서 작성건수 200건 이상, 누적 평가금액 5조 이상의 실무경험. 단순히 높은 가격이 아닌, 설명 가능하고 문제없는 가격 산출에 강점.</p>
+          </div>
+        </div>
+        <div class="strength">
+          <div class="num">3</div>
+          <div>
+            <h3>신속하고 책임감 있는 평가사</h3>
+            <p>접수부터 발송까지 평균 2.5일 소요 — 급건도 문제 없습니다! 탁상감정 · 감정서 작성 · 심사응대 및 발송까지 직접 진행합니다.</p>
           </div>
         </div>
       </div>
+
+      <div class="firm">
+        <h3>중앙감정평가법인 소개</h3>
+        <div class="firm-stats">
+          <div class="stat"><div class="ico">🏢</div><div class="big">17</div><div class="lab">전국 본지사</div></div>
+          <div class="stat"><div class="ico">👥</div><div class="big">205</div><div class="lab">구성원 수</div></div>
+          <div class="stat"><div class="ico">🎖️</div><div class="big">AA-</div><div class="lab">신용등급</div></div>
+        </div>
+        <p class="firm-desc">
+          국토교통부가 지정한 <b>‘주요 대형평가법인’</b>으로서 2025년 기준 매출액 10위권 내의 법인입니다.
+          공정성과 전문성을 바탕으로 <b>2년 연속 ‘국세청 부동산 감정평가사업’</b>에 선정되었습니다.
+        </p>
+        <div class="bldgs">
+          <div class="bldg">
+            <img src="assets/bldg-sk.png" alt="종로 SK린빌딩" />
+            <div class="cap"><div class="n">종로 SK *린빌딩</div><div class="a">10,000억</div></div>
+          </div>
+          <div class="bldg">
+            <img src="assets/bldg-acro.png" alt="반포 아크로리버파크" />
+            <div class="cap"><div class="n">반포 아크로리버*크</div><div class="a">20,000억</div></div>
+          </div>
+          <div class="bldg">
+            <img src="assets/bldg-doosan.png" alt="분당 두산타워" />
+            <div class="cap"><div class="n">분당 두* 타워</div><div class="a">10,300억</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cue">SCROLL<span class="arrow">↓</span></div>
+  </section>
+
+  <!-- ===================== 3면 : All About + QR ===================== -->
+  <section class="screen" id="about">
+    <div class="wrap">
+      <h2 class="sec-h">All About <b>최원준 평가사</b></h2>
+
+      <div class="contact-list">
+        <div class="contact-item"><span class="k">주소</span><span class="v">서울특별시 서초구 서초동 1599-11</span></div>
+        <div class="contact-item"><span class="k">핸드폰</span><span class="v"><a href="tel:010-9984-5915">010-9984-5915</a></span></div>
+        <div class="contact-item"><span class="k">사무실</span><span class="v"><a href="tel:02-3490-2419">02-3490-2419</a></span></div>
+        <div class="contact-item"><span class="k">블로그</span><span class="v"><a href="https://blog.naver.com/gkfbaks" target="_blank" rel="noopener">blog.naver.com/gkfbaks</a></span></div>
+        <div class="contact-item"><span class="k">이메일</span><span class="v"><a href="mailto:jabon5915@jaa.co.kr">jabon5915@jaa.co.kr</a></span></div>
+      </div>
+
+      <div class="credentials">
+        <div class="cred"><span class="k">학력</span><span>연세대학교 도시공학과 (분당 서현고 졸)</span></div>
+        <div class="cred"><span class="k">자격증</span><span>감정평가사 · 데이터분석 준전문가</span></div>
+      </div>
+
+      <div class="kakao">
+        <img src="assets/qr.png" alt="카카오톡 프로필 QR 코드" />
+        <div class="label"><b>카카오톡 프로필</b>QR을 스캔해 바로 상담을 시작하세요.</div>
+      </div>
+
+      <p class="closing">
+        긴 소개글 읽어주셔서 감사합니다.<br />
+        모든 게 빠르게 변하고 지나쳐가는 오늘날에도<br />
+        여전히 진심의 가치를 믿습니다.<br />
+        제가 진심으로 도울 기회를 주시면 감사하겠습니다.
+      </p>
     </div>
   </section>
 
